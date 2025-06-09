@@ -1,0 +1,16 @@
+2025-06-08 23:27:33,171 - INFO - Economic Forecasting Pipeline initiated
+2025-06-08 23:27:33,171 - INFO - 🔍 Checking dependencies...
+2025-06-08 23:27:33,512 - INFO - ✅ pandas - OK
+2025-06-08 23:27:33,512 - INFO - ✅ numpy - OK
+2025-06-08 23:27:33,643 - INFO - ✅ matplotlib - OK
+2025-06-08 23:27:34,366 - INFO - ✅ seaborn - OK
+2025-06-08 23:27:34,375 - INFO - ✅ plotly - OK
+2025-06-08 23:27:34,375 - INFO - ✅ statsmodels - OK
+2025-06-08 23:27:34,376 - ERROR - ❌ scikit-learn - MISSING
+2025-06-08 23:27:34,413 - INFO - ✅ requests - OK
+2025-06-08 23:27:34,729 - INFO - ✅ streamlit - OK
+2025-06-08 23:27:34,757 - INFO - ✅ joblib - OK
+2025-06-08 23:27:34,758 - INFO - ✅ scipy - OK
+2025-06-08 23:27:34,758 - ERROR - Missing packages: ['scikit-learn']
+2025-06-08 23:27:34,758 - ERROR - Please install missing packages: pip install scikit-learn
+2025-06-08 23:27:34,758 - ERROR - ❌ Pipeline aborted due to missing dependencies

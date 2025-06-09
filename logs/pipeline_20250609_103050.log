@@ -1,0 +1,104 @@
+2025-06-09 10:30:50,898 - INFO - Economic Forecasting Pipeline initiated
+2025-06-09 10:30:50,898 - INFO - 🔍 Checking dependencies...
+2025-06-09 10:30:55,045 - INFO - ✅ pandas - OK
+2025-06-09 10:30:55,045 - INFO - ✅ numpy - OK
+2025-06-09 10:30:55,549 - INFO - ✅ matplotlib - OK
+2025-06-09 10:30:59,268 - INFO - ✅ seaborn - OK
+2025-06-09 10:30:59,294 - INFO - ✅ plotly - OK
+2025-06-09 10:30:59,295 - INFO - ✅ statsmodels - OK
+2025-06-09 10:30:59,535 - INFO - ✅ requests - OK
+2025-06-09 10:31:00,824 - INFO - ✅ streamlit - OK
+2025-06-09 10:31:00,976 - INFO - ✅ joblib - OK
+2025-06-09 10:31:00,976 - INFO - ✅ scipy - OK
+2025-06-09 10:31:00,976 - INFO - ✅ All dependencies satisfied
+2025-06-09 10:31:00,976 - INFO - 📁 Setting up directory structure...
+2025-06-09 10:31:00,976 - INFO - ✅ Created/verified: data/raw
+2025-06-09 10:31:00,976 - INFO - ✅ Created/verified: data/processed
+2025-06-09 10:31:00,977 - INFO - ✅ Created/verified: models
+2025-06-09 10:31:00,977 - INFO - ✅ Created/verified: results
+2025-06-09 10:31:00,977 - INFO - ✅ Created/verified: notebooks/figures
+2025-06-09 10:31:00,977 - INFO - ✅ Created/verified: logs
+2025-06-09 10:31:00,977 - INFO - ✅ Created/verified: app
+2025-06-09 10:31:00,977 - INFO - ✅ Directory structure ready
+2025-06-09 10:31:00,977 - INFO - 
+============================================================
+2025-06-09 10:31:00,977 - INFO - 📊 STEP 1: DATA COLLECTION
+2025-06-09 10:31:00,978 - INFO - ============================================================
+2025-06-09 10:31:00,978 - WARNING - ⚠️ FRED API key not configured!
+2025-06-09 10:31:00,978 - WARNING - Please set FRED_API_KEY environment variable
+2025-06-09 10:31:00,978 - WARNING - Get your free API key at: https://research.stlouisfed.org/
+2025-06-09 10:31:11,865 - INFO - 🔄 Collecting 7 economic indicators...
+2025-06-09 10:31:13,847 - INFO - ✅ Data collection completed successfully
+2025-06-09 10:31:13,847 - INFO - 📁 Data saved to: data/raw/economic_data.csv
+2025-06-09 10:31:13,848 - INFO - 
+============================================================
+2025-06-09 10:31:13,848 - INFO - 🔧 STEP 2: DATA PREPROCESSING
+2025-06-09 10:31:13,848 - INFO - ============================================================
+2025-06-09 10:31:14,195 - INFO - ✅ Preprocessing completed successfully
+2025-06-09 10:31:14,195 - INFO - 📊 Final dataset shape: (291, 77)
+2025-06-09 10:31:14,195 - INFO - 📈 Features created: 70
+2025-06-09 10:31:14,196 - INFO - 📉 Data loss: 4.6%
+2025-06-09 10:31:14,196 - INFO - 
+📋 Transformations Applied:
+2025-06-09 10:31:14,196 - INFO -    GDP: difference
+2025-06-09 10:31:14,196 - INFO -    UNEMPLOYMENT: none
+2025-06-09 10:31:14,196 - INFO -    INFLATION: difference
+2025-06-09 10:31:14,197 - INFO -    FED_RATE: none
+2025-06-09 10:31:14,197 - INFO -    EMPLOYMENT: difference
+2025-06-09 10:31:14,197 - INFO -    INDUSTRIAL_PRODUCTION: difference
+2025-06-09 10:31:14,197 - INFO -    CONSUMER_SENTIMENT: difference
+2025-06-09 10:31:14,197 - INFO - 
+============================================================
+2025-06-09 10:31:14,198 - INFO - 📈 STEP 3: EXPLORATORY DATA ANALYSIS
+2025-06-09 10:31:14,198 - INFO - ============================================================
+2025-06-09 10:31:34,283 - INFO - ✅ EDA completed successfully
+2025-06-09 10:31:34,283 - INFO - 📊 Analysis dataset shape: (291, 77)
+2025-06-09 10:31:34,283 - INFO - 📋 Main indicators analyzed: 7
+2025-06-09 10:31:34,283 - INFO - 
+🔗 Key Correlations Identified:
+2025-06-09 10:31:34,284 - INFO -    Strongest positive: EMPLOYMENT ↔ INDUSTRIAL_PRODUCTION (0.786)
+2025-06-09 10:31:34,284 - INFO -    Strongest negative: UNEMPLOYMENT ↔ FED_RATE (-0.586)
+2025-06-09 10:31:34,284 - INFO - 
+============================================================
+2025-06-09 10:31:34,284 - INFO - 🤖 STEP 4: MODEL DEVELOPMENT
+2025-06-09 10:31:34,284 - INFO - ============================================================
+2025-06-09 10:33:44,862 - INFO - ✅ Modeling completed successfully
+2025-06-09 10:33:44,862 - INFO - 📊 Models trained: 21
+2025-06-09 10:33:44,863 - INFO - 🏆 Best performing model: ARIMA_INFLATION
+2025-06-09 10:33:44,863 - INFO - 📈 Best RMSE: 0.8470
+2025-06-09 10:33:44,863 - INFO - 📈 Best MAE: 0.6003
+2025-06-09 10:33:44,863 - INFO - 
+🏆 Model Rankings (Top 3):
+2025-06-09 10:33:44,863 - INFO -    1. ARIMA_INFLATION (RMSE: 0.8470)
+2025-06-09 10:33:44,863 - INFO -    2. ARIMA_INDUSTRIAL_PRODUCTION (RMSE: 1.5255)
+2025-06-09 10:33:44,864 - INFO -    3. ARIMA_CONSUMER_SENTIMENT (RMSE: 4.6854)
+2025-06-09 10:33:44,865 - INFO - 
+============================================================
+2025-06-09 10:33:44,865 - INFO - 📊 STEP 5: MODEL EVALUATION
+2025-06-09 10:33:44,865 - INFO - ============================================================
+2025-06-09 10:33:47,072 - INFO - ✅ Model evaluation completed successfully
+2025-06-09 10:33:47,072 - INFO - 🏆 Best model: ARIMA_INFLATION
+2025-06-09 10:33:47,072 - INFO - 📈 Performance category: Excellent
+2025-06-09 10:33:47,072 - INFO - 📊 Overall rank: 1.0
+2025-06-09 10:33:47,072 - INFO - 
+📊 Performance Distribution:
+2025-06-09 10:33:47,073 - INFO -    Excellent: 4 models
+2025-06-09 10:33:47,073 - INFO -    Poor: 4 models
+2025-06-09 10:33:47,073 - INFO -    Good: 3 models
+2025-06-09 10:33:47,073 - INFO -    Fair: 3 models
+2025-06-09 10:33:47,073 - INFO - 
+============================================================
+2025-06-09 10:33:47,073 - INFO - 🖥️ STEP 6: DASHBOARD PREPARATION
+2025-06-09 10:33:47,073 - INFO - ============================================================
+2025-06-09 10:33:47,073 - INFO - ✅ Dashboard file found
+2025-06-09 10:33:47,073 - INFO - ✅ data/processed/processed_economic_data.csv - Available
+2025-06-09 10:33:47,073 - INFO - ✅ models/model_comparison.csv - Available
+2025-06-09 10:33:47,074 - INFO - ✅ results/enhanced_model_comparison.csv - Available
+2025-06-09 10:33:47,074 - INFO - ✅ Dashboard ready for deployment
+2025-06-09 10:33:47,074 - INFO - 🚀 Run dashboard with: streamlit run /workspaces/Macro-forecast/app/dashboard.py
+2025-06-09 10:33:47,074 - INFO - 
+============================================================
+2025-06-09 10:33:47,074 - INFO - 📋 PIPELINE EXECUTION REPORT
+2025-06-09 10:33:47,074 - INFO - ============================================================
+2025-06-09 10:33:47,074 - INFO - 📋 Pipeline report saved to: /workspaces/Macro-forecast/results/pipeline_report_20250609_103347.txt
+2025-06-09 10:33:47,074 - INFO - 🎉 Pipeline completed successfully!

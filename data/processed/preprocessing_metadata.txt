@@ -1,0 +1,16 @@
+PREPROCESSING METADATA
+==================================================
+
+Original shape: (305, 7)
+Final shape: (291, 77)
+Data loss: 4.6%
+
+TRANSFORMATIONS APPLIED:
+------------------------------
+GDP: difference
+UNEMPLOYMENT: none
+INFLATION: difference
+FED_RATE: none
+EMPLOYMENT: difference
+INDUSTRIAL_PRODUCTION: difference
+CONSUMER_SENTIMENT: difference

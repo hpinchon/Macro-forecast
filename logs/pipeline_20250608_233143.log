@@ -1,0 +1,36 @@
+2025-06-08 23:31:43,562 - INFO - Economic Forecasting Pipeline initiated
+2025-06-08 23:31:43,562 - INFO - 🔍 Checking dependencies...
+2025-06-08 23:31:43,910 - INFO - ✅ pandas - OK
+2025-06-08 23:31:43,910 - INFO - ✅ numpy - OK
+2025-06-08 23:31:43,983 - INFO - ✅ matplotlib - OK
+2025-06-08 23:31:45,296 - INFO - ✅ seaborn - OK
+2025-06-08 23:31:45,302 - INFO - ✅ plotly - OK
+2025-06-08 23:31:45,302 - INFO - ✅ statsmodels - OK
+2025-06-08 23:31:45,347 - INFO - ✅ requests - OK
+2025-06-08 23:31:45,611 - INFO - ✅ streamlit - OK
+2025-06-08 23:31:45,636 - INFO - ✅ joblib - OK
+2025-06-08 23:31:45,636 - INFO - ✅ scipy - OK
+2025-06-08 23:31:45,636 - INFO - ✅ All dependencies satisfied
+2025-06-08 23:31:45,636 - INFO - 📁 Setting up directory structure...
+2025-06-08 23:31:45,636 - INFO - ✅ Created/verified: data/raw
+2025-06-08 23:31:45,637 - INFO - ✅ Created/verified: data/processed
+2025-06-08 23:31:45,637 - INFO - ✅ Created/verified: models
+2025-06-08 23:31:45,637 - INFO - ✅ Created/verified: results
+2025-06-08 23:31:45,637 - INFO - ✅ Created/verified: notebooks/figures
+2025-06-08 23:31:45,637 - INFO - ✅ Created/verified: logs
+2025-06-08 23:31:45,637 - INFO - ✅ Created/verified: app
+2025-06-08 23:31:45,638 - INFO - ✅ Directory structure ready
+2025-06-08 23:31:45,638 - INFO - 
+============================================================
+2025-06-08 23:31:45,638 - INFO - 📊 STEP 1: DATA COLLECTION
+2025-06-08 23:31:45,638 - INFO - ============================================================
+2025-06-08 23:31:45,638 - WARNING - ⚠️ FRED API key not configured!
+2025-06-08 23:31:45,639 - WARNING - Please set FRED_API_KEY environment variable
+2025-06-08 23:31:45,639 - WARNING - Get your free API key at: https://research.stlouisfed.org/
+2025-06-08 23:32:21,185 - WARNING - ⚠️ Pipeline interrupted by user
+2025-06-08 23:32:21,186 - INFO - 
+============================================================
+2025-06-08 23:32:21,186 - INFO - 📋 PIPELINE EXECUTION REPORT
+2025-06-08 23:32:21,186 - INFO - ============================================================
+2025-06-08 23:32:21,186 - INFO - 📋 Pipeline report saved to: /workspaces/Macro-forecast/results/pipeline_report_20250608_233221.txt
+2025-06-08 23:32:21,186 - WARNING - ⚠️ Pipeline completed with issues
