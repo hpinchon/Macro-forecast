@@ -3,7 +3,7 @@ Configuration file for economic forecasting project
 Contains paths, API keys, and model parameters
 """
 import os
-from pathlib import Pat
+from pathlib import Path
 from dotenv import load_dotenv
 
 # Load environment variables
