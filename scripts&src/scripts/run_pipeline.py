@@ -428,8 +428,6 @@ Run the dashboard: streamlit run app/dashboard.py
 View results in: results/ directory
 Check figures in: notebooks/figures/ directory
 Review logs in: logs/ directory
-
-PORTFOLIO READY!
 """
         else:
             failed_steps = [step for step, status in self.pipeline_status.items() if not status]
@@ -495,7 +493,7 @@ Re-run pipeline to retry failed steps
         success = self.generate_pipeline_report()
         
         if success:
-            logger.info("🎉 Pipeline completed successfully!")
+            logger.info("Pipeline completed successfully!")
         else:
             logger.warning("⚠️ Pipeline completed with issues")
         
