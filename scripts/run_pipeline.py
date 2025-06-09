@@ -48,7 +48,7 @@ class EconomicForecastingPipeline:
         banner = """
 ╔══════════════════════════════════════════════════════════════════╗
 ║                                                                  ║
-║           🏦 ECONOMIC FORECASTING PIPELINE v2.0                  ║
+║              ECONOMIC FORECASTING PIPELINE v2.0                  ║
 ║                                                                  ║
 ║           Macro Research & Model Development Suite               ║
 ║                                                                  ║
@@ -90,7 +90,7 @@ Project root: {root}
             logger.error("Please install missing packages: pip install " + " ".join(missing_packages))
             return False
         
-        logger.info("✅ All dependencies satisfied")
+        logger.info("All dependencies satisfied")
         return True
     
     def setup_directory_structure(self):
@@ -112,12 +112,12 @@ Project root: {root}
             dir_path.mkdir(parents=True, exist_ok=True)
             logger.info(f"✅ Created/verified: {directory}")
         
-        logger.info("✅ Directory structure ready")
+        logger.info("Directory structure ready")
     
     def run_data_collection(self):
         """Execute data collection from FRED API"""
         logger.info("\n" + "="*60)
-        logger.info("📊 STEP 1: DATA COLLECTION")
+        logger.info("STEP 1: DATA COLLECTION")
         logger.info("="*60)
         
         try:
@@ -147,7 +147,7 @@ Project root: {root}
                 'CONSUMER_SENTIMENT': 'UMCSENT'     # Consumer Sentiment Index
             }
             
-            logger.info(f"🔄 Collecting {len(economic_series)} economic indicators...")
+            logger.info(f"Collecting {len(economic_series)} economic indicators...")
             
             collector = FREDCollector(api_key)
             economic_data = collector.get_multiple_series(
@@ -160,8 +160,8 @@ Project root: {root}
                 collector.inspect_data(economic_data)
                 saved_file = collector.save_data_to_csv(economic_data, 'economic_data.csv')
                 
-                logger.info(f"✅ Data collection completed successfully")
-                logger.info(f"📁 Data saved to: {saved_file}")
+                logger.info(f"Data collection completed successfully")
+                logger.info(f"Data saved to: {saved_file}")
                 self.pipeline_status['data_collection'] = True
                 return True
             else:
@@ -175,7 +175,7 @@ Project root: {root}
     def run_preprocessing(self):
         """Execute data preprocessing and feature engineering"""
         logger.info("\n" + "="*60)
-        logger.info("🔧 STEP 2: DATA PREPROCESSING")
+        logger.info("STEP 2: DATA PREPROCESSING")
         logger.info("="*60)
         
         try:
@@ -188,13 +188,13 @@ Project root: {root}
             )
             
             if processed_data is not None and not processed_data.empty:
-                logger.info("✅ Preprocessing completed successfully")
-                logger.info(f"📊 Final dataset shape: {metadata['final_shape']}")
-                logger.info(f"📈 Features created: {metadata['features_created']}")
-                logger.info(f"📉 Data loss: {metadata['data_loss_pct']:.1f}%")
+                logger.info("Preprocessing completed successfully")
+                logger.info(f"Final dataset shape: {metadata['final_shape']}")
+                logger.info(f"Features created: {metadata['features_created']}")
+                logger.info(f"Data loss: {metadata['data_loss_pct']:.1f}%")
                 
                 # Log transformations applied
-                logger.info("\n📋 Transformations Applied:")
+                logger.info("\nTransformations Applied:")
                 for series, transform in metadata['transformations'].items():
                     logger.info(f"   {series}: {transform['method']}")
                 
@@ -229,7 +229,7 @@ Project root: {root}
                 
                 # Log key correlations
                 if correlations is not None:
-                    logger.info("\n🔗 Key Correlations Identified:")
+                    logger.info("\nKey Correlations Identified:")
                     # Find strongest correlations
                     corr_values = correlations.values
                     import numpy as np
@@ -340,7 +340,7 @@ Project root: {root}
             dashboard_path = self.project_root / 'app' / 'dashboard.py'
             
             if dashboard_path.exists():
-                logger.info("✅ Dashboard file found")
+                logger.info("Dashboard file found")
                 
                 # Check if all required data files exist
                 required_files = [
@@ -388,9 +388,9 @@ Project root: {root}
 ECONOMIC FORECASTING PIPELINE EXECUTION REPORT
 ==============================================
 
-📅 Execution Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
-⏱️ Total Execution Time: {execution_time:.1f} seconds ({execution_time/60:.1f} minutes)
-📁 Project Directory: {self.project_root}
+Execution Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
+Total Execution Time: {execution_time:.1f} seconds ({execution_time/60:.1f} minutes)
+Project Directory: {self.project_root}
 
 PIPELINE STATUS:
 ---------------
@@ -424,19 +424,19 @@ NEXT STEPS:
         
         if self.pipeline_status['dashboard_ready']:
             report += """✅ Pipeline completed successfully!
-🚀 Run the dashboard: streamlit run app/dashboard.py
-📊 View results in: results/ directory
-📈 Check figures in: notebooks/figures/ directory
-📋 Review logs in: logs/ directory
+Run the dashboard: streamlit run app/dashboard.py
+View results in: results/ directory
+Check figures in: notebooks/figures/ directory
+Review logs in: logs/ directory
 
-PORTFOLIO READY! 🎉
+PORTFOLIO READY!
 """
         else:
             failed_steps = [step for step, status in self.pipeline_status.items() if not status]
             report += f"""⚠️ Pipeline partially completed
-❌ Failed steps: {', '.join(failed_steps)}
-🔧 Check logs for error details
-🔄 Re-run pipeline to retry failed steps
+Failed steps: {', '.join(failed_steps)}
+Check logs for error details
+Re-run pipeline to retry failed steps
 """
         
         # Save report
