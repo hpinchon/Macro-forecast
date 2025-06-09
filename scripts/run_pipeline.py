@@ -125,7 +125,7 @@ Project root: {root}
             
             # Check for API key
             api_key = os.getenv('FRED_API_KEY')
-            if not api_key or api_key == '073a7aa47f4414e0e5d59ec7119f83ff':
+            if not api_key or api_key == 'your_fred_api_key_here':
                 logger.warning("⚠️ FRED API key not configured!")
                 logger.warning("Please set FRED_API_KEY environment variable")
                 logger.warning("Get your free API key at: https://research.stlouisfed.org/")

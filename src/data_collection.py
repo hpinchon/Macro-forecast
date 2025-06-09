@@ -85,8 +85,8 @@ class FREDCollector:
         
         if all_series:
             df = pd.DataFrame(all_series)
-            print(f"\n📊 Combined dataset shape: {df.shape}")
-            print(f"📅 Date range: {df.index.min()} to {df.index.max()}")
+            print(f"\nCombined dataset shape: {df.shape}")
+            print(f"Date range: {df.index.min()} to {df.index.max()}")
             return df
         else:
             print("❌ No data retrieved")
@@ -111,9 +111,9 @@ class FREDCollector:
         filepath = raw_data_path / filename
         data.to_csv(filepath)
         
-        print("💾 Data saved to: {}".format(filepath))
-        print("📊 File size: {:.1f} KB".format(filepath.stat().st_size / 1024))
-        print("📈 Data shape: {}".format(data.shape))
+        print("Data saved to: {}".format(filepath))
+        print("File size: {:.1f} KB".format(filepath.stat().st_size / 1024))
+        print("Data shape: {}".format(data.shape))
         
         return filepath
     
@@ -125,14 +125,14 @@ class FREDCollector:
             data (pd.DataFrame): Data to inspect
         """
         print("\n" + "="*60)
-        print("📊 DATA INSPECTION REPORT")
+        print("DATA INSPECTION REPORT")
         print("="*60)
         
         # Basic info
-        print(f"📏 Shape: {data.shape}")
-        print(f"📋 Columns: {list(data.columns)}")
-        print(f"📅 Date range: {data.index.min()} to {data.index.max()}")
-        print(f"🔢 Data types:\n{data.dtypes}")
+        print(f"Shape: {data.shape}")
+        print(f"Columns: {list(data.columns)}")
+        print(f"Date range: {data.index.min()} to {data.index.max()}")
+        print(f"Data types:\n{data.dtypes}")
         
         # Missing values
         missing = data.isnull().sum()
@@ -166,13 +166,13 @@ if __name__ == "__main__":
         'EMPLOYMENT': 'PAYEMS'    # Non-farm Payrolls (Monthly)
     }
     
-    # Replace with your actual FRED API key
-    API_KEY = "073a7aa47f4414e0e5d59ec7119f83ff"
+    # Replace with your FRED API key
+    API_KEY = "your_fred_api_key_here"
     
     collector = FREDCollector(API_KEY)
     
     # Collect the data
-    print("🚀 Starting data collection...")
+    print("Starting data collection...")
     economic_data = collector.get_multiple_series(ECONOMIC_SERIES, start_date='2010-01-01')
     
     if not economic_data.empty:
